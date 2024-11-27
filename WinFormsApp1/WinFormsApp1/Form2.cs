@@ -12,9 +12,16 @@ namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private bool who1;
+        public Form2(bool who)
         {
             InitializeComponent();
+            who1 = who;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

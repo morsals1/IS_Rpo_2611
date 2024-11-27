@@ -124,7 +124,8 @@ namespace WinFormsApp1
                             if (fileText.Contains(alltext))
                             {
                                 MessageBox.Show("вы вошли");
-                                Form2 f = new Form2();
+                                Form2 f = new Form2(who);
+                                this.Hide();
                                 f.Show();
                             }
                             else
@@ -148,7 +149,8 @@ namespace WinFormsApp1
                             if (fileText.Contains(alltext))
                             {
                                 MessageBox.Show("вы вошли");
-                                Form2 f = new Form2();
+                                Form2 f = new Form2(who);
+                                this.Hide();
                                 f.Show();
                             }
                             else

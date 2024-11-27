@@ -44,9 +44,10 @@
             // 
             // Buyer
             // 
-            Buyer.Location = new Point(12, 12);
+            Buyer.Location = new Point(14, 16);
+            Buyer.Margin = new Padding(3, 4, 3, 4);
             Buyer.Name = "Buyer";
-            Buyer.Size = new Size(91, 23);
+            Buyer.Size = new Size(104, 31);
             Buyer.TabIndex = 0;
             Buyer.Text = "покупатель";
             Buyer.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // dealer
             // 
-            dealer.Location = new Point(12, 41);
+            dealer.Location = new Point(14, 55);
+            dealer.Margin = new Padding(3, 4, 3, 4);
             dealer.Name = "dealer";
-            dealer.Size = new Size(91, 23);
+            dealer.Size = new Size(104, 31);
             dealer.TabIndex = 1;
             dealer.Text = "продаван";
             dealer.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // RegBut
             // 
             RegBut.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            RegBut.Location = new Point(12, 400);
+            RegBut.Location = new Point(14, 533);
+            RegBut.Margin = new Padding(3, 4, 3, 4);
             RegBut.Name = "RegBut";
-            RegBut.Size = new Size(360, 38);
+            RegBut.Size = new Size(411, 51);
             RegBut.TabIndex = 2;
             RegBut.Text = "зарегистрироваться";
             RegBut.UseVisualStyleBackColor = true;
@@ -75,25 +78,27 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 146);
+            textBox1.Location = new Point(14, 195);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(195, 23);
+            textBox1.Size = new Size(222, 27);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 214);
+            textBox2.Location = new Point(14, 285);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(195, 23);
+            textBox2.Size = new Size(222, 27);
             textBox2.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(12, 118);
+            label1.Location = new Point(14, 157);
             label1.Name = "label1";
-            label1.Size = new Size(63, 25);
+            label1.Size = new Size(78, 32);
             label1.TabIndex = 5;
             label1.Text = "почта";
             // 
@@ -101,36 +106,38 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(12, 186);
+            label2.Location = new Point(14, 248);
             label2.Name = "label2";
-            label2.Size = new Size(78, 25);
+            label2.Size = new Size(96, 32);
             label2.TabIndex = 6;
             label2.Text = "Пароль";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._9727537;
-            pictureBox1.Location = new Point(109, 12);
+            pictureBox1.Location = new Point(125, 16);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(263, 128);
+            pictureBox1.Size = new Size(301, 171);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(12, 245);
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label3.Location = new Point(14, 329);
             label3.Name = "label3";
-            label3.Size = new Size(140, 21);
+            label3.Size = new Size(157, 25);
             label3.TabIndex = 8;
             label3.Text = "Уже есть аккаунт?";
             // 
             // EntraceBut
             // 
-            EntraceBut.Location = new Point(158, 247);
+            EntraceBut.Location = new Point(177, 329);
+            EntraceBut.Margin = new Padding(3, 4, 3, 4);
             EntraceBut.Name = "EntraceBut";
-            EntraceBut.Size = new Size(49, 21);
+            EntraceBut.Size = new Size(59, 25);
             EntraceBut.TabIndex = 9;
             EntraceBut.Text = "войти";
             EntraceBut.UseVisualStyleBackColor = true;
@@ -140,9 +147,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(213, 214);
+            label4.Location = new Point(243, 285);
             label4.Name = "label4";
-            label4.Size = new Size(33, 25);
+            label4.Size = new Size(47, 32);
             label4.TabIndex = 10;
             label4.Text = "👁";
             label4.MouseLeave += label4_MouseLeave;
@@ -150,9 +157,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 450);
+            ClientSize = new Size(439, 600);
             Controls.Add(label4);
             Controls.Add(EntraceBut);
             Controls.Add(label3);
@@ -164,6 +171,7 @@
             Controls.Add(RegBut);
             Controls.Add(dealer);
             Controls.Add(Buyer);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
