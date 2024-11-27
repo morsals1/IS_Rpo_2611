@@ -30,73 +30,153 @@
         {
             tabControl1 = new TabControl();
             tabCat = new TabPage();
+            catalogPanel = new FlowLayoutPanel();
             tabOrder = new TabPage();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            loadButton = new Button();
+            saveButton = new Button();
+            ordersDataGridView = new DataGridView();
+            Название = new DataGridViewTextBoxColumn();
+            Цена = new DataGridViewTextBoxColumn();
+            Пункт_выдачи = new DataGridViewTextBoxColumn();
+            Количество = new DataGridViewTextBoxColumn();
+            tabSklad = new TabPage();
+            tabFin = new TabPage();
             tabControl1.SuspendLayout();
+            tabCat.SuspendLayout();
+            tabOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ordersDataGridView).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabCat);
             tabControl1.Controls.Add(tabOrder);
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabSklad);
+            tabControl1.Controls.Add(tabFin);
             tabControl1.Dock = DockStyle.Top;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 125);
+            tabControl1.Size = new Size(700, 338);
             tabControl1.TabIndex = 0;
             // 
             // tabCat
             // 
-            tabCat.Location = new Point(4, 29);
+            tabCat.Controls.Add(catalogPanel);
+            tabCat.Location = new Point(4, 24);
+            tabCat.Margin = new Padding(3, 2, 3, 2);
             tabCat.Name = "tabCat";
-            tabCat.Padding = new Padding(3);
-            tabCat.Size = new Size(792, 92);
+            tabCat.Padding = new Padding(3, 2, 3, 2);
+            tabCat.Size = new Size(692, 310);
             tabCat.TabIndex = 0;
             tabCat.Text = "Каталог";
             tabCat.UseVisualStyleBackColor = true;
             // 
+            // catalogPanel
+            // 
+            catalogPanel.Location = new Point(8, 5);
+            catalogPanel.Name = "catalogPanel";
+            catalogPanel.Size = new Size(416, 187);
+            catalogPanel.TabIndex = 0;
+            // 
             // tabOrder
             // 
-            tabOrder.Location = new Point(4, 29);
+            tabOrder.Controls.Add(loadButton);
+            tabOrder.Controls.Add(saveButton);
+            tabOrder.Controls.Add(ordersDataGridView);
+            tabOrder.Location = new Point(4, 24);
+            tabOrder.Margin = new Padding(3, 2, 3, 2);
             tabOrder.Name = "tabOrder";
-            tabOrder.Padding = new Padding(3);
-            tabOrder.Size = new Size(792, 92);
+            tabOrder.Padding = new Padding(3, 2, 3, 2);
+            tabOrder.Size = new Size(692, 310);
             tabOrder.TabIndex = 1;
             tabOrder.Text = "Заказы";
             tabOrder.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // loadButton
             // 
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(792, 92);
-            tabPage1.TabIndex = 2;
-            tabPage1.Text = "Склад";
-            tabPage1.UseVisualStyleBackColor = true;
+            loadButton.Location = new Point(87, 279);
+            loadButton.Name = "loadButton";
+            loadButton.Size = new Size(75, 23);
+            loadButton.TabIndex = 2;
+            loadButton.Text = "загрузить";
+            loadButton.UseVisualStyleBackColor = true;
+            loadButton.Click += loadButton_Click;
             // 
-            // tabPage2
+            // saveButton
             // 
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(792, 92);
-            tabPage2.TabIndex = 3;
-            tabPage2.Text = "Финансы";
-            tabPage2.UseVisualStyleBackColor = true;
+            saveButton.Location = new Point(6, 279);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(75, 23);
+            saveButton.TabIndex = 1;
+            saveButton.Text = "сохранить";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
+            // 
+            // ordersDataGridView
+            // 
+            ordersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ordersDataGridView.Columns.AddRange(new DataGridViewColumn[] { Название, Цена, Пункт_выдачи, Количество });
+            ordersDataGridView.Location = new Point(25, 16);
+            ordersDataGridView.Name = "ordersDataGridView";
+            ordersDataGridView.Size = new Size(444, 208);
+            ordersDataGridView.TabIndex = 0;
+            // 
+            // Название
+            // 
+            Название.HeaderText = "Название";
+            Название.Name = "Название";
+            // 
+            // Цена
+            // 
+            Цена.HeaderText = "Цена";
+            Цена.Name = "Цена";
+            // 
+            // Пункт_выдачи
+            // 
+            Пункт_выдачи.HeaderText = "Пункт выдачи";
+            Пункт_выдачи.Name = "Пункт_выдачи";
+            // 
+            // Количество
+            // 
+            Количество.HeaderText = "Количество";
+            Количество.Name = "Количество";
+            // 
+            // tabSklad
+            // 
+            tabSklad.Location = new Point(4, 24);
+            tabSklad.Margin = new Padding(3, 2, 3, 2);
+            tabSklad.Name = "tabSklad";
+            tabSklad.Size = new Size(692, 310);
+            tabSklad.TabIndex = 2;
+            tabSklad.Text = "Склад";
+            tabSklad.UseVisualStyleBackColor = true;
+            // 
+            // tabFin
+            // 
+            tabFin.Location = new Point(4, 24);
+            tabFin.Margin = new Padding(3, 2, 3, 2);
+            tabFin.Name = "tabFin";
+            tabFin.Size = new Size(692, 310);
+            tabFin.TabIndex = 3;
+            tabFin.Text = "Финансы";
+            tabFin.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(tabControl1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
             tabControl1.ResumeLayout(false);
+            tabCat.ResumeLayout(false);
+            tabOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ordersDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -105,7 +185,15 @@
         private TabControl tabControl1;
         private TabPage tabCat;
         private TabPage tabOrder;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabSklad;
+        private TabPage tabFin;
+        private FlowLayoutPanel catalogPanel;
+        private DataGridView ordersDataGridView;
+        private DataGridViewTextBoxColumn Название;
+        private DataGridViewTextBoxColumn Цена;
+        private DataGridViewTextBoxColumn Пункт_выдачи;
+        private DataGridViewTextBoxColumn Количество;
+        private Button loadButton;
+        private Button saveButton;
     }
 }

@@ -113,59 +113,48 @@ namespace WinFormsApp1
         {
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                string alltext = textBox1.Text + " " + textBox2.Text + "\n";
-                if (who == true)
+                string inputEmail = textBox1.Text.Trim();
+                string inputPassword = textBox2.Text.Trim();
+                string alltext = inputEmail + " " + inputPassword + "\n";
+
+                string fileName = who ? "Users.txt" : "Dealers.txt";
+
+                if (File.Exists(fileName))
                 {
-                    if (File.Exists("Users.txt"))
+                    string[] fileLines = File.ReadAllLines(fileName);
+
+                    bool userExists = false;
+                    foreach (var line in fileLines)
                     {
-                        string fileText = File.ReadAllText("Users.txt");
-                        if (fileText.IndexOf(textBox1.Text) != -1)
+                        var parts = line.Split(' ');
+                        if (parts.Length == 2 && parts[0] == inputEmail && parts[1] == inputPassword)
                         {
-                            if (fileText.Contains(alltext))
-                            {
-                                MessageBox.Show("вы вошли");
-                                Form2 f = new Form2(who);
-                                this.Hide();
-                                f.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("не верный логин или праоль");
-                            }
+                            userExists = true;
+                            break;
                         }
-                        else
-                        {
-                            MessageBox.Show("Пользователя с такой почтой не существует");
-                        }
+                    }
+
+                    if (userExists)
+                    {
+                        MessageBox.Show("Вы вошли");
+                        Form2 f = new Form2(who);
+                        this.Hide();
+                        f.FormClosing += (s, args) => this.Close();
+                        f.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный логин или пароль");
                     }
                 }
-                else if (who == false)
+                else
                 {
-                    if (File.Exists("Dealers.txt"))
-                    {
-                        string fileText = File.ReadAllText("Dealers.txt");
-                        if (fileText.IndexOf(textBox1.Text) != -1)
-                        {
-                            if (fileText.Contains(alltext))
-                            {
-                                MessageBox.Show("вы вошли");
-                                Form2 f = new Form2(who);
-                                this.Hide();
-                                f.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("не верный логин или праоль");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Пользователя с такой почтой не существует");
-                        }
-                    }
+                    MessageBox.Show("Файл пользователей не найден");
                 }
             }
         }
+
+
 
 
 
@@ -193,9 +182,5 @@ namespace WinFormsApp1
         {
             textBox2.UseSystemPasswordChar = true;
         }
-
-
-
-
     }
 }
